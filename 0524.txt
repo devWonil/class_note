@@ -1,0 +1,16 @@
+TASK
+
+A --> B --> C
+
+인텐트
+
+명시적 인텐트 (값을 전달해서 보낸다)
+
+암시적 인텐트
+
+
+API
+
+Application (프로그래밍)
+Programming (code, 알고리즘, 프로그램을 만들어 활동)
+Interface (규칙, 규약)

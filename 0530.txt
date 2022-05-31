@@ -1,0 +1,44 @@
+학습 목표
+
+GET 방식의 이해 및 실습
+
+GET 방식 주소 맵핑방식 (현재)
+
+클라이언트에서 보낸 값을 받는 방식
+
+Path variable 방식으로 값을 받는 방식
+
+Query Parameter 방식으로 값을 받는 방식 (3가지)
+
+   1. key 값으로 받는 방식 (@RequestParam)
+   2. Map 방식으로 받는 방식 (@RequestParam)
+   3. dto 방식으로 받는 방식
+
+URL
+
+URI
+
+
+
+
+
+
+학습 목표
+
+Json 이해
+
+POST 주소 맵핑
+
+@RequestBody에 대한 이해와 Map 구조로 값 받아보기
+
+@Dto 를 사용해서 처리해 보기
+
+// Json
+
+String : value
+
+number : value
+
+boolean : value
+
+object : value -> {}
