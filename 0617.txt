@@ -1,0 +1,84 @@
+9강 id로 select
+
+10강 selectAll 및 paging
+
+11강 update 및 더티체킹
+
+영속성 컨텍스트
+
+DB에다가 insert, update, delete, select 를 할 때 영속성 컨텍스트 공간이 있다.
+
+스프링 기본 파싱 전략
+
+http://localhost:8080/blog/user?username=tenco
+
+2. Post, Put, Delete 요청 (데이터를 변경)
+- 데이터를 담아 보내야 할 것이 많음
+- username, password ...
+- form 태그 method = "Get", "Post" --> (key=value) RestApi 활용불가
+- 자바스크립트를 사용해서 POST, PUT, DELETE 요청 할 예정
+
+통일 : 자바스크립트 ajax요청 + 데이터 json으로 통일
+
+스프링 컨트롤러 파싱 전략1
+스프링 컨트롤러는 key=value 데이터를 자동으로 파싱하여 변수에 담아준다.
+가령 get 요청은 key=value이고 post요청중에 x-www-form-urlencoded (form태그를 만들어서 데이터 전송)
+key=value 이기 때문에 데이터는 다음과 같이 받아야한다.
+
+@PostMapping("/home")
+public String home(String username, String email) {
+
+}
+
+스프링 컨트롤러의 파싱 전략2
+
+스프링은 key=value 형태의 데이터를 오브젝트로 파싱해서 받아주는 역할도 한다.
+이 때 주의점은 object에 setter가 없으면 key=value 데이터를 파싱해서 넣어주지 못함
+
+@PostMapping("/home")
+public String home(User user) {
+
+}
+
+참고 사이트 https://www.w3schools.com/
+
+JavaScript
+
+1995년 자바스크립트는 유저와의 상호작용을 위해 10일만에 탄생한 언어. HTML페이지를 동적으로 만드는 것에 목적을 가지고 가벼운 인터프리터 언어로 만들어짐. 구글은 구글맵스를 개발하며
+
+
+컴파일 언어 vs 인터프리터 언어
+
+JavaScript 함수 예시
+function() {
+	let result = 0;
+	for(let i = 1; i <= 10; i++){
+		result += i;
+	}
+	return result;
+}
+sum();
+sum();
+
+컴파일을 마친 기계언어는 sum() 결과를 55로 기억합니다.
+반면 인터프리터 언어는 매번 sum()을 실행해서 for문을 거쳐 반환합니다.
+
+
+결론
+
+자바스크립트도 컴파일 과정을 거칩니다. 다만 자바스크립트 엔진 내부에서 실행 도중 컴파일이 필요한 경우에 내부에서 컴파일합니다.
+
+코드를 우선 인터프리터 방식으로 실행하고 필요할 때 컴파일 하는 방법을 JIT(Just-In-Time) 컴파일러 라고 부릅니다.
+
+자바스크립트의 성능을 크게 향상 시켰습니다.
+
+
+
+
+Entity 복합키 만들기
+
+1. 임베디드 타입 - OOP
+
+임베디드 타입은 복합 값 타입으로 불리며 새로운 값 타입을 직접 정의해서 사용하는 JPA의 방법입니다.
+
+@Embeddable @EmbeddedId를 사용해야 한다.
