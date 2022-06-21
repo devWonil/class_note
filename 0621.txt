@@ -1,0 +1,71 @@
+HTML 요소에 접근하는 가장 일반적인 방법은 ID값으로 접근을 한다.
+				
+innerHTML : 요소의 내용을 가져오는 가장 쉬운 방법
+가져오거나 변경하는데 사용할 수 있다.
+				
+HTML 요소 찾기
+document.getElementById(id)
+document.getElementsTagName(name)
+document.getElementsClassName(name)
+				
+요소 변경
+let element = document.getElementById(id);
+element.innerHTML = new html content // 생성, 변경
+element.attribute = new value // 생성, 변경
+element.style.property = new style
+element.setAttribute(attribute, value);
+				
+요소 추가 및 삭제
+document.createElement(element) // HTML 생성
+document.removeChild(element) // Remove an HTML
+document.appendChild(element) // Add HTML
+document.replaceChild(new, old) // Replace HTML
+document.write(text) // HTML output stream
+				
+이벤트 핸들러 추가
+document.getElementById(id).onclick = function() {code ... }
+
+const element = document.getElementsByTagName("p");
+element[0].innerHTML = "index 0번째 수정";
+				
+const element2 = document.getElementsByClassName("intro");
+element2[0].innerHTML = "HELLO WORLD";
+
+자바스크립트 코드로 통신 요청
+ GET, POST, PUT, DELETE
+ ajax 비동기 통신 처리예정
+
+데이터 유효성 검사
+. 사용자가 모든 필수 필드를 채웠는지?
+. 사용자가 유효한 날짜를 입력했는지 확인
+. 사용자가 숫자 필드에 텍스트를 입력했는지 확인
+					
+웹 프로그래밍 : 자바스크립트에서 한 번, 서버측에서도 반드시 해야한다.
+서버측 유효성 검사
+클라이언트 측 유효성 검사
+
+
+
+spring boot Ajax를 사용하는 이유
+
+AJAX는 전체 페이지를 다시 로드하지 않고 서버와 데이터를 교환하고, 웹페이지의 일부를 업데이트하는 기술입니다.
+
+추가적인 Ajax 사용이유
+
+  1. 요청에 대한 응답을 MIME TYPE html (text/html)이 아닌 data (application/json)로 받기위해 사용할 수 있다.
+     (받고 싶어서) (앱, 웹 하나로 처리가능)
+  2. 비동기 통신을 하기 위해서 사용할 수 있다.
+
+
+  1. 연산
+  2. 연산
+  3. 연산
+  4. 연산
+  5. 연산
+  6. 연산
+
+  1. 화면에 그림
+  2. 연산
+  3. 다운로드 : 용량이 큰 이미지 다운 받아야해 (10초)
+  4. 다운받은 그림을 화면에 그리는 작업 진행
+  5. 메뉴에 대한 그림을 그리는 작업
