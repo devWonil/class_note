@@ -1,0 +1,72 @@
+DataSource란
+
+- DB와 관계된 커넥션 정보를 담고 있으면 빈으로 등록하여 인자로 넘겨준다. (이 과정을 통해 스프링은 DataSource로 DB와 
+
+연결을 획득한다)
+
+- DB 서버와 연결
+- DB Connection pooling 기능
+
+종류 : JDBC DRIVER (MySQL, ORACLE)
+
+
+DB Connection Pooling
+
+자바 프로그램에서 DB에 연결하는 것은 시간 소요가 많다. (커넥션 객체를 얻는데 오래 걸린다)
+
+일정량의 connection 객체를 미리 만들어 저장해두었다가 요청 시 꺼내 사용한다. 속도와 퍼포먼스가 좋아진다.
+
+Thread 입장에서는 바로 쿼리를 날릴 수 있게된다.
+
+결론 : 데이터소스란 커넥션 풀을 관리하고, 커넥션 객체를 풀에서 꺼냈다가 반납하는 이러한 과정을 DataSource가 한다.
+
+
+JDBC
+
+DB에 접근 할 수 있도록 자바에서 제공하는 API (Java DB Connectivity)
+
+즉, DB에서 자료를 쿼리하거나 업데이트하는 방법을 제공한다. JDBC를 이용하면 DB에 비종속적인 DB연동 로직을 구현할 수
+
+있다. 즉, MySQL을 쓰다가 MS-SQL로 옮길 수 있다. 이는 JDBC API가 여러 DB DRIVER를 호환할 수 있는 인터페이스를 제공
+
+하기 때문이다.
+
+
+Spring JDBC가 하는 일
+
+connection 열기와 닫기
+
+Statement 준비와 닫기
+
+Statement 실행
+
+ResultSet Loop 처리
+
+Exception 처리와 반환
+
+Transaction 처리
+
+
+스프링에서 개발자가 일반적으로 하는 일 
+
+datasource 설정
+
+SQL문 작성
+
+결과 처리
+
+
+
+
+1. Authentication 안에 객체가 들어가는 순간부터 세션에 인증한 정보(User)가 저장이 된 상태라고 볼 수 있다.
+
+2. 로그인 요청시 username, password를 가지고 온다면 UsernamePasswordAuthenticationToken을 먼저 만들어 준다.
+
+   (굳이 토큰을 만드는 이유는 마지막에 AuthenticationManager가 UsernamePasswordAuthenticationToken을 받아서
+
+    Authentication 이라는 객체를 만든다)
+
+3. 회원정보를 DB 수정하고 SecurityContext에 있는 Authentication 객체의 정보도 함께 수정해야한다.
+
+   결론은 강제로 Authentication 객체를 만들어서 넣어 주면 됩니다.
+

@@ -1,0 +1,10 @@
+public KakaoProfile {
+	String name; 	
+	Properties properties;	
+
+
+
+	public Properties {
+		String name; 
+	}	 
+}

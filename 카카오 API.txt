@@ -1,0 +1,49 @@
+카카오 로그인 (oAuth 2.0)
+OAuth (Open Auth)
+
+기본 핵심 정보
+
+앱 키
+1e0d85577dad20bb9104174f24adbfb7
+
+사이트 도메인
+http://localhost:9090
+
+Redirect URI
+http://localhost:9090/auth/kakao/callback
+--------------------------------------------------
+
+동의항목 설정
+
+리소스 다운로드 및 화면 등록 (카카오 아이콘)
+
+*********************************
+인가 코드 받기 (Request URI)
+********************************
+method : GET
+https://kauth.kakao.com/auth/authorize?client_id=1e0d85577dad20bb9104174f24adbfb7&redirect_uri=http://localhost:9090/oauth/kakao/callback&response_type=code
+
+
+잠시 확인해보기 (동적으로 변한다)
+code=r30_xby1Sr5G9Y4xhYImxkP-L6mQ40VIbzZx69XaJRuw_5xSMXnyhiDPNnjmYF435KFw2go9dZwAAAGBqPBkLA
+
+******************
+액세스 토큰 받기
+******************
+method : POST
+https://kauth.kakao.com/oauth/token
+Content-type: application/x-www-form-urlencoded;charset=utf-8
+
+*****************
+사용자 정보 받기(액세스 토큰 사용)
+*****************
+method : GET, POST
+
+시작줄
+https://kapi.kakao.com/v2/user/me
+
+헤더
+Authorization: Bearer ${ACCESS_TOKEN}
+Content-type: application/x-www-form-urlencoded;charset=utf-8
+
+바디 (없어도 됨)
