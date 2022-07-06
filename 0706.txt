@@ -1,0 +1,65 @@
+flutter - UI 프레임워크
+
+Dart - 컴파일 언어
+
+
+
+
+
+
+< abstract User >
+id
+username
+password
+email
+phoneNum
+createDate
+role - host, guest, admin
+
+
+< Host > extends User
+House
+Reservation
+
+
+< Guest > extends User
+cart
+reservation
+
+
+< Reservation >
+Rid
+User userId
+House houseId
+date checkInDate
+date checkOutDate
+agreement - waiting, canceled, approved / complete
+
+
+< House >
+id
+name
+address
+star
+oneDayPrice
+type - 모텔, 호텔, 펜션, 게하
+Host
+List<Review> (mappedBy)
+Info
+Image
+
+
+< Review > - 게스트
+houseId
+title
+Image
+content
+score
+
+
+< Reply > - 호스트
+reviewId
+content
+
+
+< Image >
