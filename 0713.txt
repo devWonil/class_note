@@ -1,0 +1,9 @@
+프로젝트 순서 (작업순서)
+
+  1. 프로젝트 최상단에 assets 폴더 생성
+
+  2. lib/components 폴더(패키지) 생성
+
+  3. lib/theme.dart 파일생성
+
+  4. lib/components/profile_drawer.dart 파일 생성
